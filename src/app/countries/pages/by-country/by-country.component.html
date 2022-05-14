@@ -1,1 +1,36 @@
-<p>by-country works!</p>
+<h2>Por pais</h2>
+<hr />
+<form autocomplete="off" (ngSubmit)="searchCountry()">
+  <input
+    type="search"
+    class="form-control"
+    name="search-by-country"
+    id="search-by-country"
+    [(ngModel)]="currentSearch"
+    #searchInput
+  />
+</form>
+<hr />
+<div class="alert alert-danger">No sé encontró nada con el término ABCDEF</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Bandera</th>
+      <th>Nombre</th>
+      <th>Población</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Bandera</td>
+      <td>Nombre</td>
+      <td>123412</td>
+      <td>
+        <a href="/paises/cri">Ver ...</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
