@@ -11,8 +11,10 @@
   />
 </form>
 <hr />
-<div class="alert alert-danger">No sé encontró nada con el término ABCDEF</div>
-<table class="table table-hover">
+<div *ngIf="hasError" class="alert alert-danger">
+  No sé encontró nada con el término "{{ currentSearch }}"
+</div>
+<table *ngIf="!hasError" class="table table-hover">
   <thead>
     <tr>
       <th>#</th>

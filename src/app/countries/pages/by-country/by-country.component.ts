@@ -8,10 +8,18 @@ import { CountryService } from '../../services/country.service';
 })
 export class ByCountryComponent {
   public currentSearch: string = '';
+  public hasError: boolean = false;
   constructor(private countryService: CountryService) {}
   searchCountry() {
-    this.countryService.searchByContry(this.currentSearch).subscribe((res) => {
-      console.log(res);
-    });
+    this.hasError = false;
+    this.countryService.searchByContry(this.currentSearch).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        this.hasError = true;
+        console.error(err);
+      }
+    );
   }
 }
