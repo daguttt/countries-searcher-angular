@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Country } from '../../interfaces/country.interface';
 import { CountryService } from '../../services/country.service';
 
 @Component({
@@ -9,15 +10,17 @@ import { CountryService } from '../../services/country.service';
 export class ByCountryComponent {
   public currentSearch: string = '';
   public hasError: boolean = false;
+  public countries: Country[] = [];
   constructor(private countryService: CountryService) {}
   searchCountry() {
     this.hasError = false;
     this.countryService.searchByContry(this.currentSearch).subscribe(
-      (res) => {
-        console.log(res);
+      (countries) => {
+        this.countries = countries;
       },
       (err): void => {
         this.hasError = true;
+        this.countries = [];
         console.error(err);
       }
     );

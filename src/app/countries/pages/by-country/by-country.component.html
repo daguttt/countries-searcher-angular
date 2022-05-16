@@ -14,7 +14,7 @@
 <div *ngIf="hasError" class="alert alert-danger">
   No sé encontró nada con el término "{{ currentSearch }}"
 </div>
-<table *ngIf="!hasError" class="table table-hover">
+<table *ngIf="countries.length > 0" class="table table-hover">
   <thead>
     <tr>
       <th>#</th>
@@ -25,13 +25,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Bandera</td>
-      <td>Nombre</td>
-      <td>123412</td>
+    <tr *ngFor="let country of countries; let i = index">
+      <td>{{ i + 1 }}</td>
       <td>
-        <a href="/paises/cri">Ver ...</a>
+        <img class="small-flag" [src]="country.flag" [alt]="country.name" />
+      </td>
+      <td>{{ country.name }}</td>
+      <td>{{ country.population | number }}</td>
+      <td>
+        <a [routerLink]="['/country', country.alpha2Code]">Ver ...</a>
       </td>
     </tr>
   </tbody>
