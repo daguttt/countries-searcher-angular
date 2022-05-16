@@ -16,7 +16,7 @@ export class ByCountryComponent {
       (res) => {
         console.log(res);
       },
-      (err) => {
+      (err): void => {
         this.hasError = true;
         console.error(err);
       }
