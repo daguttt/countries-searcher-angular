@@ -1,0 +1,10 @@
+<form autocomplete="off" (ngSubmit)="searchCountry()">
+  <input
+    type="search"
+    class="form-control"
+    name="search-by-country"
+    id="search-by-country"
+    [(ngModel)]="currentSearch"
+    #searchInput
+  />
+</form>
