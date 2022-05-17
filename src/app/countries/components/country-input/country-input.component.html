@@ -5,6 +5,7 @@
     name="search-by-country"
     id="search-by-country"
     [(ngModel)]="currentSearch"
+    (input)="onInput()"
     #searchInput
   />
 </form>

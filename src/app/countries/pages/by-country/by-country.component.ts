@@ -26,4 +26,7 @@ export class ByCountryComponent {
       }
     );
   }
+  getSuggestions(currentSearch: string) {
+    console.log(currentSearch);
+  }
 }

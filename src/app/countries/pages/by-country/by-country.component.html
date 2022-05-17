@@ -1,6 +1,10 @@
 <h2>Por pais</h2>
 <hr />
-<app-country-input (onEnter)="searchCountry($event)"> </app-country-input>
+<app-country-input
+  (onEnter)="searchCountry($event)"
+  (onDebounce)="getSuggestions($event)"
+>
+</app-country-input>
 <hr />
 <div *ngIf="hasError" class="alert alert-danger">
   No sé encontró nada con el término "{{ currentSearch }}"
