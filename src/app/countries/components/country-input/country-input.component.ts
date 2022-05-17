@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-country-input',
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CountryInputComponent {
   public currentSearch = '';
+  @Output() onEnter: EventEmitter<string> = new EventEmitter();
   searchCountry() {
-    console.log(this.currentSearch);
+    this.onEnter.emit(this.currentSearch);
   }
 }

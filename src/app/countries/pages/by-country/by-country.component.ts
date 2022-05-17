@@ -12,8 +12,9 @@ export class ByCountryComponent {
   public hasError: boolean = false;
   public countries: Country[] = [];
   constructor(private countryService: CountryService) {}
-  searchCountry() {
+  searchCountry(currentSearch: string) {
     this.hasError = false;
+    this.currentSearch = currentSearch;
     this.countryService.searchByContry(this.currentSearch).subscribe(
       (countries) => {
         this.countries = countries;
