@@ -13,4 +13,8 @@ export class CountryService {
     const url: string = `${this.apiUrl}/name/${countryToSearch}`;
     return this.http.get<Country[]>(url);
   }
+  searchByCapital(countryToSearch: string): Observable<Country[]> {
+    const url: string = `${this.apiUrl}/capital/${countryToSearch}`;
+    return this.http.get<Country[]>(url);
+  }
 }

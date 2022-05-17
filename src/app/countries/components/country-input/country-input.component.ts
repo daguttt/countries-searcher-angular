@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { debounceTime, Subject } from 'rxjs';
 
 @Component({
@@ -7,6 +7,7 @@ import { debounceTime, Subject } from 'rxjs';
   styles: [],
 })
 export class CountryInputComponent implements OnInit {
+  @Input() placeholder: string = '';
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
   @Output() onDebounce: EventEmitter<string> = new EventEmitter();
   public currentSearch = '';
@@ -18,7 +19,6 @@ export class CountryInputComponent implements OnInit {
       this.onDebounce.emit(search);
     });
   }
-
   searchCountry() {
     this.onEnter.emit(this.currentSearch);
   }
