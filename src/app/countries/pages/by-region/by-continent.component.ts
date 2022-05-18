@@ -13,4 +13,9 @@ export class ByContinentComponent {
     'europe',
     'oceania',
   ];
+  public activeContinent: string = '';
+
+  updateActiveContinent(continent: string): void {
+    this.activeContinent = continent;
+  }
 }
