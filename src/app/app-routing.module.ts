@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ByCapitalComponent } from './countries/pages/by-capital/by-capital.component';
 import { ByCountryComponent } from './countries/pages/by-country/by-country.component';
-import { ByRegionComponent } from './countries/pages/by-region/by-region.component';
+import { ByContinentComponent } from './countries/pages/by-region/by-continent.component';
 import { ShowCountryComponent } from './countries/pages/show-country/show-country.component';
 
 const routes: Routes = [
@@ -12,8 +12,8 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'region',
-    component: ByRegionComponent,
+    path: 'continent',
+    component: ByContinentComponent,
   },
   {
     path: 'capital',
