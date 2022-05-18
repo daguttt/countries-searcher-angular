@@ -1,6 +1,6 @@
 # CountriesApp
 
-## Angular concepts used in this project
+## Angular concepts used on this project
 
 - Angular routing.
   - Pages.
