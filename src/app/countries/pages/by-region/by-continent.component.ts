@@ -23,6 +23,7 @@ export class ByContinentComponent {
   updateActiveContinent(continent: string): void {
     if (this.activeContinent === continent) return;
     this.activeContinent = continent;
+    this.countries = [];
     this.countryService
       .searchByContinent(continent)
       .subscribe((countries) => (this.countries = countries));

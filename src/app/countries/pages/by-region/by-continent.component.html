@@ -1,23 +1,25 @@
-<h2>
-  Continente activo <small>{{ activeContinent | titlecase }}</small>
-</h2>
-<hr />
-<!-- 1. -->
-<!-- [class.btn-primary]="continent === activeContinent" -->
-<!-- 2. -->
-<!-- class="btn btn-outline-primary m-1"
-  [ngClass]="{
-    'btn-outline-primary': continent !== activeContinent,
-    'btn-primary': continent === activeContinent
-  }" -->
-<button
-  *ngFor="let continent of continents"
-  class="btn m-1"
-  [class]="
-    continent === activeContinent ? 'btn-primary' : 'btn-outline-primary'
-  "
-  (click)="updateActiveContinent(continent)"
->
-  {{ continent | titlecase }}
-</button>
-<app-country-table [countries]="countries"></app-country-table>
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>
+    Continente activo <small>{{ activeContinent | titlecase }}</small>
+  </h2>
+  <hr />
+  <!-- 1. -->
+  <!-- [class.btn-primary]="continent === activeContinent" -->
+  <!-- 2. -->
+  <!-- class="btn btn-outline-primary m-1"
+    [ngClass]="{
+      'btn-outline-primary': continent !== activeContinent,
+      'btn-primary': continent === activeContinent
+    }" -->
+  <button
+    *ngFor="let continent of continents"
+    class="btn m-1"
+    [class]="
+      continent === activeContinent ? 'btn-primary' : 'btn-outline-primary'
+    "
+    (click)="updateActiveContinent(continent)"
+  >
+    {{ continent | titlecase }}
+  </button>
+  <app-country-table [countries]="countries"></app-country-table>
+</div>

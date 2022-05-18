@@ -1,13 +1,15 @@
-<h2>Por Pais</h2>
-<hr />
-<app-country-input
-  (onEnter)="searchCountry($event)"
-  (onDebounce)="getSuggestions($event)"
-  placeholder="Buscar país..."
->
-</app-country-input>
-<hr />
-<div *ngIf="hasError" class="alert alert-danger">
-  No sé encontró nada con el término "{{ currentSearch }}"
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>Por Pais</h2>
+  <hr />
+  <app-country-input
+    (onEnter)="searchCountry($event)"
+    (onDebounce)="getSuggestions($event)"
+    placeholder="Buscar país..."
+  >
+  </app-country-input>
+  <hr />
+  <div *ngIf="hasError" class="alert alert-danger">
+    No sé encontró nada con el término "{{ currentSearch }}"
+  </div>
+  <app-country-table [countries]="countries"></app-country-table>
 </div>
-<app-country-table [countries]="countries"></app-country-table>
