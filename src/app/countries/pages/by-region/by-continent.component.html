@@ -12,7 +12,10 @@
   }" -->
 <button
   *ngFor="let continent of continents"
-  class="btn btn-outline-primary m-1"
+  class="btn m-1"
+  [class]="
+    continent === activeContinent ? 'btn-primary' : 'btn-outline-primary'
+  "
   (click)="updateActiveContinent(continent)"
 >
   {{ continent | titlecase }}
