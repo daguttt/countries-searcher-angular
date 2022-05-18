@@ -5,12 +5,21 @@ import { CountryService } from '../../services/country.service';
 @Component({
   selector: 'app-by-country',
   templateUrl: './by-country.component.html',
-  styles: [],
+  styles: [
+    `
+      li {
+        cursor: pointer;
+      }
+    `,
+  ],
 })
 export class ByCountryComponent {
   public currentSearch: string = '';
   public hasError: boolean = false;
   public countries: Country[] = [];
+  public countriesToSuggest: Country[] = [];
+  public showSuggestions: boolean = false;
+
   constructor(private countryService: CountryService) {}
   searchCountry(currentSearch: string) {
     this.hasError = false;
@@ -27,6 +36,12 @@ export class ByCountryComponent {
     );
   }
   getSuggestions(currentSearch: string) {
-    console.log(currentSearch);
+    this.currentSearch = currentSearch;
+    this.showSuggestions = true;
+    this.countryService
+      .searchByContry(currentSearch)
+      .subscribe(
+        (countries) => (this.countriesToSuggest = countries.slice(0, 5))
+      );
   }
 }

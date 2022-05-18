@@ -7,6 +7,12 @@
     placeholder="Buscar país..."
   >
   </app-country-input>
+  <app-country-input-suggestions
+    *ngIf="showSuggestions"
+    [currentSearch]="currentSearch"
+    [countries]="countriesToSuggest"
+    (onSearchCurrent)="searchCountry($event)"
+  ></app-country-input-suggestions>
   <hr />
   <div *ngIf="hasError" class="alert alert-danger">
     No sé encontró nada con el término "{{ currentSearch }}"

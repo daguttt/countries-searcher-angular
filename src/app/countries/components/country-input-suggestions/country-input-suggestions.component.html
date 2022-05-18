@@ -1,0 +1,15 @@
+<ul class="list-group">
+  <li
+    *ngFor="let country of countries"
+    class="list-group-item list-group-item-action"
+  >
+    <a [routerLink]="['/country', country.alpha2Code]" class="nav-link">
+      {{ country.name }}
+    </a>
+  </li>
+  <li class="list-group-item" (click)="searchCurrent()">
+    <a class="nav-link">
+      <strong>Buscar "{{ currentSearch }}"</strong></a
+    >
+  </li>
+</ul>
