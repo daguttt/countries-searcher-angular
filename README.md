@@ -1,5 +1,7 @@
 # CountriesApp
 
+![Countries App Image](https://i.ibb.co/cxjjnkT/countries-app.png)
+
 ## Angular concepts used on this project
 
 - Angular routing.
