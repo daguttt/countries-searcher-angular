@@ -21,6 +21,7 @@ export class ByCountryComponent {
   public showSuggestions: boolean = false;
 
   constructor(private countryService: CountryService) {}
+
   searchCountry(currentSearch: string) {
     this.hasError = false;
     this.currentSearch = currentSearch;
@@ -35,9 +36,12 @@ export class ByCountryComponent {
       }
     );
   }
+
   getSuggestions(currentSearch: string) {
+    // To show as a default at the suggestions
     this.currentSearch = currentSearch;
     this.showSuggestions = true;
+
     this.countryService
       .searchByContry(currentSearch)
       .subscribe(

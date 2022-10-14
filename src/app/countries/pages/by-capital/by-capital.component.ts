@@ -8,9 +8,12 @@ import { CountryService } from '../../services/country.service';
   styles: [],
 })
 export class ByCapitalComponent {
-  public currentSearch: string = '';
-  public hasError: boolean = false;
-  public countries: Country[] = [];
+  currentSearch: string = '';
+  hasError: boolean = false;
+  countries: Country[] = [];
+
+  showSuggestions: boolean = false;
+  countriesToSuggest: Country[] = [];
 
   constructor(private countryService: CountryService) {}
 
@@ -27,5 +30,17 @@ export class ByCapitalComponent {
         console.error(err);
       }
     );
+  }
+
+  getSuggestions(currentSearch: string) {
+    // To show as a default at the suggestions
+    this.currentSearch = currentSearch;
+    this.showSuggestions = true;
+
+    this.countryService
+      .searchByCapital(currentSearch)
+      .subscribe(
+        (countries) => (this.countriesToSuggest = countries.slice(0, 5))
+      );
   }
 }
