@@ -1,5 +1,9 @@
 # CountriesApp
 
+## Description 📑
+
+App to search countries information by capital, region or specific country
+
 ![Countries App Image](https://i.ibb.co/cxjjnkT/countries-app.png)
 
 ## Angular concepts used on this project
