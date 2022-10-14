@@ -24,3 +24,8 @@ App to search countries information by capital, region or specific country
 - [Animate.css](https://animate.style/) for basic animations.
 - Alternative faster package manager: [pnpm](https://pnpm.io/).
 - [Rest Countries v2](https://restcountries.com/) - Some endpoints.
+
+## Social
+
+- [Linkedin](https://linkedin.com/in/daguttt)
+- [Twitter](https://twitter.com/daguttt)
