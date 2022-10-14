@@ -1,27 +1,32 @@
-<table
-  *ngIf="countries.length > 0"
-  class="table table-hover animate__animated animate__fadeIn animate__fast"
->
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Bandera</th>
-      <th>Nombre</th>
-      <th>Población</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let country of countries; let i = index">
-      <td>{{ i + 1 }}</td>
-      <td>
-        <img class="small-flag" [src]="country.flag" [alt]="country.name" />
-      </td>
-      <td>{{ country.capital }}, {{ country.name }}</td>
-      <td>{{ country.population | number }}</td>
-      <td>
-        <a [routerLink]="['/country', country.alpha2Code]">Ver ...</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table
+    *ngIf="countries.length > 0"
+    class="table table-hover animate__animated animate__fadeIn animate__fast"
+  >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Bandera</th>
+        <th>Capital, Nombre</th>
+        <th>Población</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let country of countries; let i = index"
+        [routerLink]="['/country', country.alpha2Code]"
+      >
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img class="small-flag" [src]="country.flag" [alt]="country.name" />
+        </td>
+        <td>{{ country.capital }}, {{ country.name }}</td>
+        <td>{{ country.population | number }}</td>
+        <td>
+          <a [routerLink]="['/country', country.alpha2Code]">Ver ...</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
