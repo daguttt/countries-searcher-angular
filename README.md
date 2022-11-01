@@ -4,13 +4,13 @@
 
 App to search countries information by capital, region or specific country
 
-<a href="https://countries-app-angular-daguttt.vercel.app/" >
-  <img src="https://res.cloudinary.com/doju0qq96/image/upload/v1665789323/countries-app-image-preview_z0dywp.png" alt="Gifs App Image Preview" />
+<a href="https://countries-searcher-angular-daguttt.vercel.app/" >
+  <img src="https://res.cloudinary.com/doju0qq96/image/upload/v1667331140/countries-searcher-image-preview_qywx4z.png" alt="Gifs Searcher Image Preview" />
 </a>
 
 ## Live Example
 
-- [Countries App](https://countries-app-angular-daguttt.vercel.app/)
+- [Countries Searcher](https://countries-searcher-angular-daguttt.vercel.app/)
 
 ## Angular concepts used on this project
 
