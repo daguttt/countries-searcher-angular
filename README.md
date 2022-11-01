@@ -1,4 +1,4 @@
-# CountriesApp
+# Countries Searcher
 
 ## Description 📑
 
